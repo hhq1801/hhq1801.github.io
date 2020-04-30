@@ -175,7 +175,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-04-30 21:26:36 / 修改时间：21:30:45" itemprop="dateCreated datePublished" datetime="2020-04-30T21:26:36+08:00">2020-04-30</time>
+              <time title="创建时间：2020-04-30 21:26:36 / 修改时间：22:19:17" itemprop="dateCreated datePublished" datetime="2020-04-30T21:26:36+08:00">2020-04-30</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -198,14 +198,48 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="参数估计"><a href="#参数估计" class="headerlink" title="参数估计"></a>参数估计</h2><p>$\ln L(\theta)=\ln \prod\limits_{i=1}^n p(x_i;\theta)=\sum\limits_{i=1}^n \ln p(x_i;\theta),\theta\in \Theta$<br>\subsection{正态分布的似然估计}<br>$f(x_i;\mu,\sigma^2)=\dfrac{1}{\sigma \sqrt{2\pi}}\text{exp}\left[-\dfrac{(x_i-\mu)^2}{2\sigma^2}\right]$</p>
+          <h2 id="分布"><a href="#分布" class="headerlink" title="分布"></a>分布</h2><p>probability density function = PDF 概率密度函数<br>cumulative distribution function = CDF 密度分布函数</p>
+<h3 id="均匀"><a href="#均匀" class="headerlink" title="均匀"></a>均匀</h3><h3 id="Gauss-正态分布"><a href="#Gauss-正态分布" class="headerlink" title="Gauss 正态分布"></a>Gauss 正态分布</h3><p>$ f(x)={\frac {1}{\sigma {\sqrt {2\pi }}}}e^{-{\frac {1}{2}}\left({\frac {x-\mu }{\sigma }}\right)^{2}}$<br><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Normal_Distribution_PDF.svg/340px-Normal_Distribution_PDF.svg.png" alt=""></p>
+<h3 id="Poisson-是离散分布"><a href="#Poisson-是离散分布" class="headerlink" title="Poisson 是离散分布"></a>Poisson 是离散分布</h3><p>$f(k;\lambda )=\Pr(X=k)={\frac {\lambda ^{k}e^{-\lambda }}{k!}}$</p>
+<h3 id="Beta"><a href="#Beta" class="headerlink" title="Beta"></a>Beta</h3><h3 id="Gamma"><a href="#Gamma" class="headerlink" title="Gamma"></a>Gamma</h3><h2 id="第4-5节"><a href="#第4-5节" class="headerlink" title="第4.5节"></a>第4.5节</h2><h3 id="离散性条件分布"><a href="#离散性条件分布" class="headerlink" title="离散性条件分布"></a>离散性条件分布</h3><p>设 (X, Y) 是二维离散型随机向量，</p>
+<script type="math/tex; mode=display">P(X = x_i, Y = y_j) = p_{ij} (i = 1, 2, . . . ; j = 1, 2, . . .)</script><p>其中$P(Y = y_j) &gt; 0, j = 1, 2, . . . $。</p>
+<p>则在 $Y = y_j$ 的条件下 X 的条件分布为</p>
+<p>$P(X = x_i|Y = y_j) =<br>\frac{P(X = x_i,  Y = y_j)}{P(Y = y_j)}<br>= \frac{p_{ij}}{\sum_kp_{kj}}<br>(i = 1, 2, . . .)$</p>
+<h3 id="条件分布密度"><a href="#条件分布密度" class="headerlink" title="条件分布密度"></a>条件分布密度</h3><script type="math/tex; mode=display">p_{X|Y}(x|y) = \frac{p(x,y)}{p_Y(y)}</script><p>为 $Y = y$ 的条件下 X 的<strong>条件分布密度</strong>，记作 $p_{X|Y}(x|y)$</p>
+<h3 id="条件期望"><a href="#条件期望" class="headerlink" title="条件期望"></a>条件期望</h3><p>定义5.2 设 X, Y 是两个随机变量，有联合密度 $p(x, y)$, 设$Y = y$ 的条件下 X 有条件分布密度 $p_{X|Y}(x|y)$，则</p>
+<script type="math/tex; mode=display">E(X|Y = y)=\left\{
+\begin{array}{lcl}
+\sum_i x_i P(X=x_i | Y = y)  &     & \mbox{(X,Y)为离散分布}\\
+\int_{-\infty}^{\infty} x p_{X|Y}(x|y)dx  &     & \mbox{(X,Y)为连续分布}\\
+\end{array} \right.</script><p>叫做$Y=y$条件下X的条件期望，记作$E(X|Y=y)$.</p>
+<p>要求上面的积分绝对收敛。<br>其中$P(X=x_i|Y=y)$为在给定$Y=y$下$X$的条件分布列，</p>
+<p>由连续型随机向量的条件密度公式 (5.4) 知</p>
+<script type="math/tex; mode=display">E(X|Y=y) = \frac{1}{p_Y(y)}\int_{-\infty}^\infty xp(x,y)dx  \quad (5.5)</script><p>$E(X|Y = y)$的意义：在$Y=y$的条件下，X取值的平均大小。</p>
+<p>$E(X|Y = y)$是y的函数，记为$g(y)$。<br>把$g(Y)$记为$E(X|Y)$，这是随机变量Y的函数。</p>
+<p>性质：</p>
+<script type="math/tex; mode=display">\begin{equation}
+\begin{aligned}
+E[E(X|Y)] &= E(g(Y))\\
+&= \int_{\{y:p_Y(y)>0\}} g(y) p_Y(y)dy \\
+&= \int_{\{y:p_Y(y)>0\}} E(X|Y=y) p_Y(y)dy \\
+&= E(X)
+\end{aligned}\tag{5.6}
+\end{equation}</script><p>公式 (5.6) 的一个用处是：有时 $E(X)$ 不易求，但是 $E(X|Y = y)$ 容易求，$E[g(Y)] = E[E(X|Y)]$ 也容易求，就可以用 (5.6) 求 $E(X)$。<br>可以看成全概公式的推广。</p>
+<h3 id="全期望公式"><a href="#全期望公式" class="headerlink" title="全期望公式"></a>全期望公式</h3><p>$E(X) = E[E(X|Y)]$</p>
+<script type="math/tex; mode=display">E(X)=\left\{
+\begin{array}{lcl}
+ \sum_{y_i} E(X|Y=y_i)P(Y=y_i)  &     & \mbox{(X,Y)为离散分布}\\
+\int_{-\infty}^{\infty} E(X |Y=y)p_Y(y)dy  &     & \mbox{(X,Y)为连续分布}\\
+\end{array} \right.</script><h2 id="参数估计"><a href="#参数估计" class="headerlink" title="参数估计"></a>参数估计</h2><p>$\ln L(\theta)=\ln \prod\limits_{i=1}^n p(x_i;\theta)=\sum\limits_{i=1}^n \ln p(x_i;\theta),\theta\in \Theta$</p>
+<h3 id="正态分布的似然估计"><a href="#正态分布的似然估计" class="headerlink" title="正态分布的似然估计"></a>正态分布的似然估计</h3><p>$f(x_i;\mu,\sigma^2)=\dfrac{1}{\sigma \sqrt{2\pi}}\text{exp}\left[-\dfrac{(x_i-\mu)^2}{2\sigma^2}\right]$</p>
 <p>$L(\mu,\sigma)=\sigma^{-n}(2\pi)^{-n/2}\text{exp}\left[-\dfrac{1}{2\sigma^2}\sum\limits_{i=1}^n(x_i-\mu)^2\right]$</p>
 <p>$\theta_1= \mu, \theta_2 = \sigma^2$</p>
 <p>$f(x_i;\theta_1,\theta_2)=\dfrac{1}{\sqrt{\theta_2}\sqrt{2\pi}}\text{exp}\left[-\dfrac{(x_i-\theta_1)^2}{2\theta_2}\right]$</p>
 <p>$L(\theta_1,\theta_2)=\prod\limits_{i=1}^n f(x_i;\theta_1,\theta_2)=\theta^{-n/2}_2(2\pi)^{-n/2}\text{exp}\left[-\dfrac{1}{2\theta_2}\sum\limits_{i=1}^n(x_i-\theta_1)^2\right]$</p>
-<p>$L(\theta_1,\theta_2)=\prod\limits_{i=1}^n f(x_i;\theta_1,\theta_2)=\theta^{-n/2}_2(2\pi)^{-n/2}\text{exp}\left[-\dfrac{1}{2\theta_2}\sum\limits_{i=1}^n(x_i-\theta_1)^2\right]$</p>
 <p>$\frac{\partial L_n}{\partial \theta_1} = -\frac{1}{\theta_2} \sum\limits_{i=1}^n(x_i-\theta_1) = 0$</p>
-<p>$\frac{\partial L_n}{\partial \theta_2} = -\frac{n}{2\theta_2} + \frac{1}{2\theta_2^2} \sum\limits_{i=1}^n(x_i-\theta_1)^2 = 0$<br>解得<br>$\hat{\theta}_1=\hat{\mu}=\dfrac{\sum x_i}{n}=\bar{x}$</p>
+<p>$\frac{\partial L_n}{\partial \theta_2} = -\frac{n}{2\theta_2} + \frac{1}{2\theta_2^2} \sum\limits_{i=1}^n(x_i-\theta_1)^2 = 0$</p>
+<p>解得</p>
+<p>$\hat{\theta}_1=\hat{\mu}=\dfrac{\sum x_i}{n}=\bar{x}$</p>
 <p>$\hat{\theta}_2=\hat{\sigma}^2=\dfrac{\sum(x_i-\bar{x})^2}{n}$</p>
 <p>$\hat{\mu}=\dfrac{\sum X_i}{n}=\bar{X}$</p>
 <p>$\hat{\sigma}^2=\dfrac{\sum(X_i-\bar{X})^2}{n}$</p>
@@ -251,10 +285,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-04-28 16:18:23 / 修改时间：20:08:15" itemprop="dateCreated datePublished" datetime="2020-04-28T16:18:23+08:00">2020-04-28</time>
+              <time title="创建时间：2020-04-28 16:18:23" itemprop="dateCreated datePublished" datetime="2020-04-28T16:18:23+08:00">2020-04-28</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-30 21:37:41" itemprop="dateModified" datetime="2020-04-30T21:37:41+08:00">2020-04-30</time>
+              </span>
 
           
 
@@ -267,7 +307,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <hr>
+          <h2 id="主效应"><a href="#主效应" class="headerlink" title="主效应"></a>主效应</h2><h2 id="控制变量"><a href="#控制变量" class="headerlink" title="控制变量"></a>控制变量</h2><h2 id=""><a href="#" class="headerlink" title=" "></a> </h2><hr>
 <pre><code>                  (1)   
          hfrom1998_~1   
 </code></pre><hr>
@@ -348,10 +388,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-04-26 11:36:29 / 修改时间：13:14:21" itemprop="dateCreated datePublished" datetime="2020-04-26T11:36:29+08:00">2020-04-26</time>
+              <time title="创建时间：2020-04-26 11:36:29" itemprop="dateCreated datePublished" datetime="2020-04-26T11:36:29+08:00">2020-04-26</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-30 22:20:07" itemprop="dateModified" datetime="2020-04-30T22:20:07+08:00">2020-04-30</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -379,8 +425,8 @@
 <p>问题3：<br>ssh key 要放对位置</p>
 <p>问题4：<br>next 主题<br><a href="https://www.jianshu.com/p/33bc0a0a6e90" target="_blank" rel="noopener">https://www.jianshu.com/p/33bc0a0a6e90</a></p>
 <p>问题5：<br>如何使用latex<br><a href="https://blog.csdn.net/qq_34229391/article/details/82725229" target="_blank" rel="noopener">https://blog.csdn.net/qq_34229391/article/details/82725229</a><br><a href="https://www.jianshu.com/p/7ab21c7f0674" target="_blank" rel="noopener">https://www.jianshu.com/p/7ab21c7f0674</a><br>latex我倾向于先在overleaf排版好，粘贴过来</p>
-<p>部署github：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save </span><br><span class="line">hexo clean</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure></p>
-<p>本地查看：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure></p>
+<p>部署github：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save </span><br><span class="line">hexo clean</span><br><span class="line">hexo deploy #将.deploy目录部署到GitHub</span><br></pre></td></tr></table></figure></p>
+<p>本地查看：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s &#x2F;&#x2F;server #开启预览访问端口（默认端口4000，&#39;ctrl + c&#39;关闭server）</span><br></pre></td></tr></table></figure></p>
 <p>如何生成一篇博文<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new [post] &lt;title&gt; &#x2F;&#x2F; [layout] 为布局，可选项为 &#96;post&#96;、&#96;page&#96;、&#96;draft&#96;，这将决定文章所在文件路径。</span><br></pre></td></tr></table></figure></p>
 <h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><p><a href="https://hexo.io/zh-cn/docs/tag-plugins" target="_blank" rel="noopener">https://hexo.io/zh-cn/docs/tag-plugins</a></p>
 <h3 id="引用-quote"><a href="#引用-quote" class="headerlink" title="引用 quote"></a>引用 quote</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"> &#123;% blockquote [author[, source]] [link] [source_link_title] %&#125;</span><br><span class="line">content</span><br><span class="line">&#123;% endblockquote %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% blockquote %&#125;</span><br><span class="line">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque hendrerit lacus ut purus iaculis feugiat. Sed nec tempor elit, quis aliquam neque. Curabitur sed diam eget dolor fermentum semper at eu lorem.</span><br><span class="line">&#123;% endblockquote %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% blockquote David Levithan, Wide Awake %&#125;</span><br><span class="line">Do not just seek happiness for yourself. Seek happiness for all. Through kindness. Through mercy.</span><br><span class="line">&#123;% endblockquote %&#125;</span><br></pre></td></tr></table></figure>
@@ -389,6 +435,9 @@
 <h3 id="code"><a href="#code" class="headerlink" title="code"></a>code</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% codeblock [title] [lang:language] [url] [link text] [additional options] %&#125;</span><br><span class="line">code snippet</span><br><span class="line">&#123;% endcodeblock %&#125;</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alert(&#39;Hello World!&#39;);</span><br></pre></td></tr></table></figure>
 <p>指定语言<br><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[rectangle setX: <span class="number">10</span> y: <span class="number">10</span> width: <span class="number">20</span> height: <span class="number">20</span>];</span><br></pre></td></tr></table></figure><br>附加说明<br><figure class="highlight plain"><figcaption><span>Array.map</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">array.map(callback[, thisArg])</span><br></pre></td></tr></table></figure><br>附加说明和网址<br><figure class="highlight plain"><figcaption><span>_.compact</span><a href="http://underscorejs.org/#compact" target="_blank" rel="noopener">Underscore.js</a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">_.compact([0, 1, false, 2, &#39;&#39;, 3]);</span><br><span class="line">&#x3D;&gt; [1, 2, 3]</span><br></pre></td></tr></table></figure></p>
+<h3 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![](http:&#x2F;&#x2F;www.thirteen.org&#x2F;13pressroom&#x2F;files&#x2F;2014&#x2F;07&#x2F;cen_1588a1.jpg)</span><br></pre></td></tr></table></figure>
+<h3 id="mathjax"><a href="#mathjax" class="headerlink" title="mathjax"></a>mathjax</h3><p>mathjax: true</p>
+<p><a href="https://jdhao.github.io/2018/01/25/hexo-mathjax-equation-number/" target="_blank" rel="noopener">https://jdhao.github.io/2018/01/25/hexo-mathjax-equation-number/</a></p>
 
       
     </div>
@@ -439,7 +488,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-04-28 20:41:53" itemprop="dateModified" datetime="2020-04-28T20:41:53+08:00">2020-04-28</time>
+                <time title="修改时间：2020-04-30 21:43:15" itemprop="dateModified" datetime="2020-04-30T21:43:15+08:00">2020-04-30</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -462,7 +511,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="opera"><a href="#opera" class="headerlink" title="opera"></a>opera</h1><h2 id="history"><a href="#history" class="headerlink" title="history"></a>history</h2><h2 id="type"><a href="#type" class="headerlink" title="type"></a>type</h2><h2 id="famous-pieces-arias-duets"><a href="#famous-pieces-arias-duets" class="headerlink" title="famous pieces - arias, duets"></a>famous pieces - arias, duets</h2><h2 id="other-knowledge"><a href="#other-knowledge" class="headerlink" title="other knowledge"></a>other knowledge</h2><h1 id="la-cenerentola"><a href="#la-cenerentola" class="headerlink" title="la cenerentola"></a>la cenerentola</h1><p>为什么要给乞丐喝咖啡。</p>
+          <h1 id="opera"><a href="#opera" class="headerlink" title="opera"></a>opera</h1><h2 id="history"><a href="#history" class="headerlink" title="history"></a>history</h2><h2 id="type"><a href="#type" class="headerlink" title="type"></a>type</h2><h2 id="famous-pieces-arias-duets"><a href="#famous-pieces-arias-duets" class="headerlink" title="famous pieces - arias, duets"></a>famous pieces - arias, duets</h2><h2 id="other-knowledge"><a href="#other-knowledge" class="headerlink" title="other knowledge"></a>other knowledge</h2><h1 id="la-cenerentola"><a href="#la-cenerentola" class="headerlink" title="la cenerentola"></a>la cenerentola</h1><p><img src="http://www.thirteen.org/13pressroom/files/2014/07/cen_1588a1.jpg" alt=""><br>为什么要给乞丐喝咖啡。</p>
 <p>一群人出来的时候我就惊讶了。天花板上坐着人，就很met。</p>
 <p>缺了一个角的沙发。</p>
 <p>爸爸出来骂两个大女儿打扰了他的梦，很塑造人物形象。</p>
