@@ -150,7 +150,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/26/2020-04-26/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/30/probability-statistic/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -164,7 +164,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/04/26/2020-04-26/" class="post-title-link" itemprop="url">部署hexo的一些问题</a>
+            <a href="/2020/04/30/probability-statistic/" class="post-title-link" itemprop="url">probability-statistic</a>
         </h2>
 
         <div class="post-meta">
@@ -175,7 +175,191 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-04-26 11:36:29 / 修改时间：11:59:55" itemprop="dateCreated datePublished" datetime="2020-04-26T11:36:29+08:00">2020-04-26</time>
+              <time title="创建时间：2020-04-30 21:26:36 / 修改时间：21:30:45" itemprop="dateCreated datePublished" datetime="2020-04-30T21:26:36+08:00">2020-04-30</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/math/" itemprop="url" rel="index"><span itemprop="name">math</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="参数估计"><a href="#参数估计" class="headerlink" title="参数估计"></a>参数估计</h2><p>$\ln L(\theta)=\ln \prod\limits_{i=1}^n p(x_i;\theta)=\sum\limits_{i=1}^n \ln p(x_i;\theta),\theta\in \Theta$<br>\subsection{正态分布的似然估计}<br>$f(x_i;\mu,\sigma^2)=\dfrac{1}{\sigma \sqrt{2\pi}}\text{exp}\left[-\dfrac{(x_i-\mu)^2}{2\sigma^2}\right]$</p>
+<p>$L(\mu,\sigma)=\sigma^{-n}(2\pi)^{-n/2}\text{exp}\left[-\dfrac{1}{2\sigma^2}\sum\limits_{i=1}^n(x_i-\mu)^2\right]$</p>
+<p>$\theta_1= \mu, \theta_2 = \sigma^2$</p>
+<p>$f(x_i;\theta_1,\theta_2)=\dfrac{1}{\sqrt{\theta_2}\sqrt{2\pi}}\text{exp}\left[-\dfrac{(x_i-\theta_1)^2}{2\theta_2}\right]$</p>
+<p>$L(\theta_1,\theta_2)=\prod\limits_{i=1}^n f(x_i;\theta_1,\theta_2)=\theta^{-n/2}_2(2\pi)^{-n/2}\text{exp}\left[-\dfrac{1}{2\theta_2}\sum\limits_{i=1}^n(x_i-\theta_1)^2\right]$</p>
+<p>$L(\theta_1,\theta_2)=\prod\limits_{i=1}^n f(x_i;\theta_1,\theta_2)=\theta^{-n/2}_2(2\pi)^{-n/2}\text{exp}\left[-\dfrac{1}{2\theta_2}\sum\limits_{i=1}^n(x_i-\theta_1)^2\right]$</p>
+<p>$\frac{\partial L_n}{\partial \theta_1} = -\frac{1}{\theta_2} \sum\limits_{i=1}^n(x_i-\theta_1) = 0$</p>
+<p>$\frac{\partial L_n}{\partial \theta_2} = -\frac{n}{2\theta_2} + \frac{1}{2\theta_2^2} \sum\limits_{i=1}^n(x_i-\theta_1)^2 = 0$<br>解得<br>$\hat{\theta}_1=\hat{\mu}=\dfrac{\sum x_i}{n}=\bar{x}$</p>
+<p>$\hat{\theta}_2=\hat{\sigma}^2=\dfrac{\sum(x_i-\bar{x})^2}{n}$</p>
+<p>$\hat{\mu}=\dfrac{\sum X_i}{n}=\bar{X}$</p>
+<p>$\hat{\sigma}^2=\dfrac{\sum(X_i-\bar{X})^2}{n}$</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/28/paper/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Alessia">
+      <meta itemprop="description" content="welcome">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="若颖/'s blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/04/28/paper/" class="post-title-link" itemprop="url">paper</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-04-28 16:18:23 / 修改时间：20:08:15" itemprop="dateCreated datePublished" datetime="2020-04-28T16:18:23+08:00">2020-04-28</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <hr>
+<pre><code>                  (1)   
+         hfrom1998_~1   
+</code></pre><hr>
+<p>annalpub_x~n        0.992<em><br>                   (1.86)<br>#<br>annalci~x_ln        0.392</em><br>                   (1.78)   </p>
+<p>mobage              0.236<em>*</em><br>                   (5.02)   </p>
+<p>gender              0.202<br>                   (1.23)   </p>
+<p>hfrom1998        -0.00624<br>                  (-0.28)   </p>
+<p>_cons               4.204<em>*</em></p>
+<pre><code>               (8.49)   
+</code></pre><hr>
+<h2 id="N-1867"><a href="#N-1867" class="headerlink" title="N                    1867   "></a>N                    1867   </h2><p>t statistics in parentheses</p>
+<ul>
+<li>p&lt;0.1, <strong> p&lt;0.05, *</strong> p&lt;0.01</li>
+</ul>
+<hr>
+<pre><code>             (1)          (2)          (3)          (4)          (5)          (6)   
+       hfrom19~1    hfrom19~1    hfrom19~1    hfrom19~1    hfrom19~1    hfrom19~1   
+</code></pre><hr>
+<p>hfrom1998     0.0357<em>      0.0136      0.00388     -0.00362     -0.00624     -0.00624<br>              (1.69)       (0.62)       (0.17)      (-0.16)      (-0.28)      (-0.28)<br>ann~b_x_ln                  1.676**</em>     1.023<em>       0.923</em>       0.992<em>       0.992</em><br>                           (3.76)       (1.91)       (1.74)       (1.86)       (1.86)<br>ann~e_x_ln                               0.486<strong>      0.388<em>       0.392</em>       0.392<em><br>                                        (2.21)       (1.76)       (1.78)       (1.78)<br>mobage                                                0.232</em></strong>     0.236<strong><em>     0.236</em></strong><br>                                                     (4.95)       (5.02)       (5.02)<br>gender                                                             0.202        0.202<br>                                                                  (1.23)       (1.23)<br>_cons          6.215<strong><em>     4.858</em></strong>     4.931<strong><em>     4.454</em></strong>     4.204<strong><em>     4.204</em></strong></p>
+<pre><code>         (24.08)      (10.96)      (11.11)       (9.86)       (8.49)       (8.49)   
+</code></pre><hr>
+<p>N               1867         1867         1867         1867         1867         1867<br>R-sq           0.002        0.009        0.012        0.024        0.025        0.025   </p>
+<h2 id="adj-R-sq-0-001-0-008-0-010-0-022-0-023-0-023"><a href="#adj-R-sq-0-001-0-008-0-010-0-022-0-023-0-023" class="headerlink" title="adj. R-sq      0.001        0.008        0.010        0.022        0.023        0.023   "></a>adj. R-sq      0.001        0.008        0.010        0.022        0.023        0.023   </h2><p>t statistics in parentheses</p>
+<ul>
+<li>p&lt;0.1, <strong> p&lt;0.05, *</strong> p&lt;0.01</li>
+</ul>
+<hr>
+<pre><code>             (1)          (2)          (3)          (4)          (5)          (6)   
+          deltah       deltah       deltah       deltah       deltah       deltah   
+</code></pre><hr>
+<p>hfrom1998     -0.964<strong><em>    -0.986</em></strong>    -0.996<strong><em>    -1.004</em></strong>    -1.006<strong><em>    -1.006</em></strong><br>            (-45.64)     (-45.12)     (-44.71)     (-45.22)     (-45.14)     (-45.14)<br>ann~b_x_ln                  1.676<strong><em>     1.023</em>       0.923<em>       0.992</em>       0.992*<br>                           (3.76)       (1.91)       (1.74)       (1.86)       (1.86)<br>ann~e_x_ln                               0.486</strong>      0.388<em>       0.392</em>       0.392<em><br>                                        (2.21)       (1.76)       (1.78)       (1.78)<br>mobage                                                0.232**</em>     0.236<strong><em>     0.236</em></strong><br>                                                     (4.95)       (5.02)       (5.02)<br>gender                                                             0.202        0.202<br>                                                                  (1.23)       (1.23)<br>_cons          6.215<strong><em>     4.858</em></strong>     4.931<strong><em>     4.454</em></strong>     4.204<strong><em>     4.204</em></strong></p>
+<pre><code>         (24.08)      (10.96)      (11.11)       (9.86)       (8.49)       (8.49)   
+</code></pre><hr>
+<p>N               1867         1867         1867         1867         1867         1867<br>R-sq           0.528        0.531        0.532        0.538        0.539        0.539   </p>
+<h2 id="adj-R-sq-0-527-0-531-0-532-0-537-0-538-0-538"><a href="#adj-R-sq-0-527-0-531-0-532-0-537-0-538-0-538" class="headerlink" title="adj. R-sq      0.527        0.531        0.532        0.537        0.538        0.538   "></a>adj. R-sq      0.527        0.531        0.532        0.537        0.538        0.538   </h2><p>t statistics in parentheses</p>
+<ul>
+<li>p&lt;0.1, <strong> p&lt;0.05, *</strong> p&lt;0.01</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/26/hexo/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Alessia">
+      <meta itemprop="description" content="welcome">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="若颖/'s blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/04/26/hexo/" class="post-title-link" itemprop="url">部署hexo的一些问题</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-04-26 11:36:29 / 修改时间：13:14:21" itemprop="dateCreated datePublished" datetime="2020-04-26T11:36:29+08:00">2020-04-26</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/tech/" itemprop="url" rel="index"><span itemprop="name">tech</span></a>
+                </span>
             </span>
 
           
@@ -198,6 +382,13 @@
 <p>部署github：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save </span><br><span class="line">hexo clean</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure></p>
 <p>本地查看：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure></p>
 <p>如何生成一篇博文<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new [post] &lt;title&gt; &#x2F;&#x2F; [layout] 为布局，可选项为 &#96;post&#96;、&#96;page&#96;、&#96;draft&#96;，这将决定文章所在文件路径。</span><br></pre></td></tr></table></figure></p>
+<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><p><a href="https://hexo.io/zh-cn/docs/tag-plugins" target="_blank" rel="noopener">https://hexo.io/zh-cn/docs/tag-plugins</a></p>
+<h3 id="引用-quote"><a href="#引用-quote" class="headerlink" title="引用 quote"></a>引用 quote</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"> &#123;% blockquote [author[, source]] [link] [source_link_title] %&#125;</span><br><span class="line">content</span><br><span class="line">&#123;% endblockquote %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% blockquote %&#125;</span><br><span class="line">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque hendrerit lacus ut purus iaculis feugiat. Sed nec tempor elit, quis aliquam neque. Curabitur sed diam eget dolor fermentum semper at eu lorem.</span><br><span class="line">&#123;% endblockquote %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% blockquote David Levithan, Wide Awake %&#125;</span><br><span class="line">Do not just seek happiness for yourself. Seek happiness for all. Through kindness. Through mercy.</span><br><span class="line">&#123;% endblockquote %&#125;</span><br></pre></td></tr></table></figure>
+<blockquote><p>Do not just seek happiness for yourself. Seek happiness for all. Through kindness. Through mercy.</p>
+<footer><strong>David Levithan</strong><cite>Wide Awake</cite></footer></blockquote>
+<h3 id="code"><a href="#code" class="headerlink" title="code"></a>code</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% codeblock [title] [lang:language] [url] [link text] [additional options] %&#125;</span><br><span class="line">code snippet</span><br><span class="line">&#123;% endcodeblock %&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alert(&#39;Hello World!&#39;);</span><br></pre></td></tr></table></figure>
+<p>指定语言<br><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[rectangle setX: <span class="number">10</span> y: <span class="number">10</span> width: <span class="number">20</span> height: <span class="number">20</span>];</span><br></pre></td></tr></table></figure><br>附加说明<br><figure class="highlight plain"><figcaption><span>Array.map</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">array.map(callback[, thisArg])</span><br></pre></td></tr></table></figure><br>附加说明和网址<br><figure class="highlight plain"><figcaption><span>_.compact</span><a href="http://underscorejs.org/#compact" target="_blank" rel="noopener">Underscore.js</a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">_.compact([0, 1, false, 2, &#39;&#39;, 3]);</span><br><span class="line">&#x3D;&gt; [1, 2, 3]</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -240,9 +431,24 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-04-26 11:19:36 / 修改时间：11:51:43" itemprop="dateCreated datePublished" datetime="2020-04-26T11:19:36+08:00">2020-04-26</time>
+              <time title="创建时间：2020-04-26 11:19:36" itemprop="dateCreated datePublished" datetime="2020-04-26T11:19:36+08:00">2020-04-26</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-28 20:41:53" itemprop="dateModified" datetime="2020-04-28T20:41:53+08:00">2020-04-28</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/arts/" itemprop="url" rel="index"><span itemprop="name">arts</span></a>
+                </span>
             </span>
 
           
@@ -256,7 +462,33 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="opera"><a href="#opera" class="headerlink" title="opera"></a>opera</h1><h2 id="history"><a href="#history" class="headerlink" title="history"></a>history</h2><h2 id="type"><a href="#type" class="headerlink" title="type"></a>type</h2><h2 id="famous-pieces-arias-duets"><a href="#famous-pieces-arias-duets" class="headerlink" title="famous pieces - arias, duets"></a>famous pieces - arias, duets</h2><h2 id="other-knowledge"><a href="#other-knowledge" class="headerlink" title="other knowledge"></a>other knowledge</h2>
+          <h1 id="opera"><a href="#opera" class="headerlink" title="opera"></a>opera</h1><h2 id="history"><a href="#history" class="headerlink" title="history"></a>history</h2><h2 id="type"><a href="#type" class="headerlink" title="type"></a>type</h2><h2 id="famous-pieces-arias-duets"><a href="#famous-pieces-arias-duets" class="headerlink" title="famous pieces - arias, duets"></a>famous pieces - arias, duets</h2><h2 id="other-knowledge"><a href="#other-knowledge" class="headerlink" title="other knowledge"></a>other knowledge</h2><h1 id="la-cenerentola"><a href="#la-cenerentola" class="headerlink" title="la cenerentola"></a>la cenerentola</h1><p>为什么要给乞丐喝咖啡。</p>
+<p>一群人出来的时候我就惊讶了。天花板上坐着人，就很met。</p>
+<p>缺了一个角的沙发。</p>
+<p>爸爸出来骂两个大女儿打扰了他的梦，很塑造人物形象。</p>
+<p>然后是梦里有驴子飞过。</p>
+<p>解释梦也解释的有点神奇</p>
+<p>铃铛是房子的欢愉<br>翅膀是两个女儿<br>飞起来的是远离平庸。<br>最后ass is me。 他是怎么做到这么自然的说出这句话的？</p>
+<p>爸爸晕倒很有喜剧效果。</p>
+<p>王子出现了，说自己必须要结婚，否则将被剥夺继承权。为什么随便进入别人家，看吓到了灰姑娘吧。</p>
+<p>两人看对眼了。</p>
+<p>扔帽子让男主接住也是蛮厉害的，需要练吧。</p>
+<p>stepfather？？</p>
+<p>随从欺负王子那段也很好笑？？就是感觉俩人应该关系不错，不然也不敢这么干。</p>
+<p>沙发一直在制造笑点。</p>
+<p>谁先坐下也很好玩。</p>
+<p>为什么打扮的一个比一个奇怪。</p>
+<p>丑角都化白脸吗</p>
+<p>两个人亲到一块儿真的很好笑</p>
+<p>您是世界上的第八和第九大奇迹，这词儿怎么想出来的，厉害了。<br>Like father like daughter</p>
+<p>演太过了！</p>
+<p>然后看到女主求爸爸要去，女主的性格也挺刚强的<br>然后去求假王子</p>
+<p>再说一个字我就掐死你<br>然后假哭。</p>
+<p>把女儿的档案抢过来撕了可太假了。</p>
+<p>来了先说我是你爸爸<br>摘墨镜变身小天使也太帅了<br>金色翅膀。这个角色本来就好看。</p>
+<p>然后传教，可还行。</p>
+<p>想要摸一摸翅膀也太可爱了吧</p>
+
       
     </div>
 
@@ -535,12 +767,16 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-count">6</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">标签</span>
       </div>
   </nav>
